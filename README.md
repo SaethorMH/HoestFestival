@@ -6,16 +6,15 @@
 
 ## Om Projekt
 
-I dette projekt kommer vi med vores forslag til hvordan Høst Møns hjemme side kunne se ud og fungere. For at lave hjemmesiden har vi først idéudviklet og designet i figma og siden har vi kodet i astro
+I dette projekt kommer vi med vores forslag til hvordan Høst Møns hjemme side kunne se ud og fungere. For at lave hjemmesiden har vi først idéudviklet og designet i figma og siden har vi kodet løsningen vha. astro. Udover astro har vi brugt supabase til at lave en database som vi bruger i løsningen
 
 ---
 
 ### Links
 
 - GitHub repository: https://github.com/SaethorMH/Hoestfestival
-- GitHub Pages: https://saethormh.github.io/Yumsty/index.html
-- Figma: https://www.figma.com/design/VUoEL5qofw6q9y680mQons/Team-56?node-id=280-1049&t=H1qOEWV1cLK5BmR8-1
-- Trello: https://trello.com/b/sL2jNAQa/tema-8-gruppe-56
+- Netlify host: www.hoestfestival.netlify.com
+- Figma: https://www.figma.com/design/P5ca9eA4TnJ4tSCS5KipeT/H%C3%B8st-M%C3%B8n?node-id=490-1873&t=ROxyuhbm3PGo7U8n-0
 
 ---
 
@@ -26,19 +25,27 @@ project/
 ├── .gitignore
 ├── *astro filer*
 ├── src/
-│   ├── pages
+│   ├── pages/
 │   │     ├── index.astro
-│   ├── layout
-│   │     ├── index.astro
-│   ├── components
-│   │     ├── Footer.
-│   │     ├── Header.astro
-│   │     ├── index.astro
-│   └── recipe.css
+│   │     ├── program.astro
+│   │     ├── arkiv.astro
+│   │     ├── om.astro
+│   │     └── pladsen.astro
+│   ├── layout/
+│   │     └── Layout.astro
+│   └── components/
+│         ├── Footer.
+│         ├── Header.astro
+│         └── KunstnerKort.astro
+│
 ├── public/
-│   ├── billeder
+│   ├── billeder/
+│   │     └── alle billederne
+│   ├── font/
+│   │     ├── londrinasolid-regular-webfont.woff2
+│   │     └── ...
 │   ├── discover.css
-│   ├── recipeList.css
+│   ├── favicon.ico
 │   └── recipe.css
 └── README.md
 ```
@@ -61,9 +68,9 @@ project/
 
 ---
 
-## Kode funktioner
+# Astro
 
-## Branches
+## Komponenter
 
 ### Workflow
 

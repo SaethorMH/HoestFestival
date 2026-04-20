@@ -1,0 +1,36 @@
+:root {
+  --primary: #c7a7c7ff;
+  --primaryLighter: #e9d1ffff;
+  --primaryDarker: #9c799cff;
+  --black: #000000ff;
+  --accent: #fff6c5ff;
+  --buttonTextColor: #000000ff;
+}
+.alt {
+  --primary: #e36573ff;
+  --primaryLighter: #da9896ff;
+  --primaryDarker: #a9363aff;
+  --black: #000000ff;
+  --accent: #1e463cff;
+  --buttonTextColor: #ffe5e5ff;
+}
+@font-face {
+  font-family: londrina;
+  src: url(/public/font/londrinasolid-regular-webfont.woff2);
+}
+@font-face {
+  font-family: londrinaBlack;
+  src: url(/public/font/londrinasolid-black-webfont.woff2);
+}
+@font-face {
+  font-family: londrinaLight;
+  src: url(/public/font/londrinasolid-light-webfont.woff2);
+}
+@font-face {
+  font-family: londrinaThin;
+  src: url(/public/font/londrinasolid-thin-webfont.woff2);
+}
+
+* {
+  font-family: londrina, sans-serif;
+}
