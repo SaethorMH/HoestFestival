@@ -4,8 +4,6 @@ import KunstnerKort from "../components/KunstnerKort.astro";
 import Layout from "../layout/Layout.astro";
 import '../styles/global.css';
 
-
-
 const url =`${import.meta.env.PUBLIC_SUPABASE_URL}/rest/v1/Kunstnere?select=*`;
 const apiKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY;
 const options = {
@@ -19,13 +17,27 @@ const data = await fetch(url, options)
   
 
 
-console.log(data)
+console.log(data);
 ---
 
 	
 	<Layout title="Forside">
 <h1>Dette er forsiden</h1>
+<section id="carousel">
 {data.map((kunstner) => <KunstnerKort kunstner={kunstner} />)}
+</section>
+
 
 	</Layout>
-
+<style>
+    #carousel{
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+        width: 80%;
+        height: 300px;
+        background-color: red;
+        margin: auto;
+        overflow-x: scroll;
+    }
+</style>  

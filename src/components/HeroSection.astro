@@ -1,0 +1,47 @@
+---
+
+---
+<div class="heroContainer">
+    <div class="hero">
+    <h1>Velkommen til Høst Festivalen</h1>
+    <div id="heroImage">
+
+</div>
+<img src="/images/bakke2.svg" alt="Bakke 2" class="bakke" style="margin-top: 400px;">
+
+<img src="/images/bakke1.svg" alt="Bakke 1" class="bakke">
+<img src="/images/bakke3.svg" alt="Bakke 3" class="bakke">
+</div>
+</div>
+
+<style> 
+.heroContainer{
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+    .hero{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        width: 100%;
+    }
+    .hero .bakke{ 
+        
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        max-width: 100%;
+    } 
+    #heroImage{
+        background-color: black;
+        
+        width: 100%;
+        height: 100%;
+        grid-column: 2/-1;
+        grid-row: 1/2;
+    }
+    @media  {
+        
+    }
+</style>
