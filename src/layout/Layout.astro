@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import HeroSection from '../components/HeroSection.astro';
 
 
 const { title = 'Welcome' } = Astro.props;
@@ -19,6 +20,7 @@ const { title = 'Welcome' } = Astro.props;
 	</head>
     <body>
         <Header />
+        <HeroSection />
         <main >
             <slot />
         </main>
@@ -28,7 +30,7 @@ const { title = 'Welcome' } = Astro.props;
 
 <style>
     body {
-        background-color: var(--primary);
+        background-color: var(--primaryLighter);
     }
 
     main {

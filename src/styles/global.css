@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+image {
+  width: 100%;
+  height: auto;
+}
 :root {
   --primary: #c7a7c7ff;
   --primaryLighter: #e9d1ffff;
@@ -16,19 +24,19 @@
 }
 @font-face {
   font-family: londrina;
-  src: url(/public/font/londrinasolid-regular-webfont.woff2);
+  src: url(/font/londrinasolid-regular-webfont.woff2);
 }
 @font-face {
   font-family: londrinaBlack;
-  src: url(/public/font/londrinasolid-black-webfont.woff2);
+  src: url(/font/londrinasolid-black-webfont.woff2);
 }
 @font-face {
   font-family: londrinaLight;
-  src: url(/public/font/londrinasolid-light-webfont.woff2);
+  src: url(/font/londrinasolid-light-webfont.woff2);
 }
 @font-face {
   font-family: londrinaThin;
-  src: url(/public/font/londrinasolid-thin-webfont.woff2);
+  src: url(/font/londrinasolid-thin-webfont.woff2);
 }
 
 * {
