@@ -6,6 +6,7 @@ import HeroSection from '../components/HeroSection.astro';
 
 
 const { title = 'Welcome' } = Astro.props;
+const {imgURL} = Astro.props;
 ---
 
 
@@ -20,7 +21,7 @@ const { title = 'Welcome' } = Astro.props;
 	</head>
     <body>
         <Header />
-        <HeroSection />
+        <HeroSection imgURL={imgURL} />
         <main >
             <slot />
         </main>

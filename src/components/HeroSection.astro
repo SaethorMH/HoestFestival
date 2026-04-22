@@ -1,11 +1,11 @@
 ---
-
+const {imgURL} = Astro.props;
 ---
 <div class="heroContainer">
     <div class="hero">
     <h1>Velkommen til Høst Festivalen</h1>
     <div id="heroImage">
-
+<img src={imgURL} alt="HeroBillede">
 </div>
 <img src="/images/bakke2.svg" alt="Bakke 2" class="bakke" style="margin-top: 400px;">
 
