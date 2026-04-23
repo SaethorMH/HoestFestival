@@ -1,0 +1,51 @@
+---
+//@ts-nocheck
+import Program from "../components/Program.astro";
+import Layout from "../layout/Layout.astro";
+import '../styles/global.css';
+
+const url =`${import.meta.env.PUBLIC_SUPABASE_URL}/rest/v1/Kunstnere?select=*`;
+const apiKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+const options = {
+  headers: {
+    apikey: apiKey,
+  },
+};
+
+const data = await fetch(url, options)
+  .then((res) => res.json());
+  
+
+
+console.log(data);
+---
+
+	
+<Layout title="Forside">
+<h1>Kunstnere</h1>
+{data.map((kunstner) => <Program kunstner={kunstner} />)}
+</section>
+
+
+	</Layout>
+<style>
+h1{
+padding-left: 35px;
+padding-bottom: 30px;
+font-size: 3.5rem;
+}
+
+
+@media (min-width: 1000px) {
+
+h1{
+padding-left: 50px;
+padding-bottom: 30px;
+font-size: 3.5rem;
+}
+
+
+}
+
+
+</style>  
