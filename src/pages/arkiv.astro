@@ -1,0 +1,34 @@
+---
+//@ts-nocheck
+import ArkivTilbageblik from "../components/ArkivTilbageblik.astro";
+import Layout from "../layout/Layout.astro";
+import '../styles/global.css';
+
+const url =`${import.meta.env.PUBLIC_SUPABASE_URL}/rest/v1/Kunstnere?select=*&limit=5&order=id`;
+const apiKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+
+const options = {
+  headers: {
+    apikey: apiKey,
+  },
+};
+
+const data = await fetch(url, options)
+  .then((res) => res.json());
+
+console.log(data);
+
+---
+
+    <Layout title="Arkiv" imgURL="http://ucef0a8bb4432123cd3b87023056.previews.dropboxusercontent.com/p/thumb/AC_CcfzhItGeTqjk8oSGt7ndOZ6otfJfy9UCe34l5BmqyASHQm0g8IWN2c0tHp6uObH2C6sn17zqp0iALkd6rbSGugOWKOWPOfIrd0QuKo9yinnNxsORe1XUUsbsBNHBMf--_OyCZzuC5n9qM3Og62gEBcIEqqvaAG8mKzq75HBMcnVk2jlEO9BIv2o_gg3eqPEO4sf3x05JCmZqrwnqa8DOFUTZX850KwcUVdymqAul2osNr6uKBOYLQk-m0My0_RZ21kJji4AyBO3fk_V7DEpQRsAQXsICGGO7LuUaTzQC4DuHgWCqjMgVKUGpJ60yBirE6tHJ4cp3wMdRepoQ9c7hpnSAuKH0xKzWNN7Cg_hvc7w6IIZ6EpT6fS_im1jNlQg/p.jpeg?is_prewarmed=true">
+        <h1>Arkiv - Et varmt tilbageblik</h1>
+        <section id="dropdown">
+            {data.map((kunstner) => <ArkivTilbageblik kunstner={kunstner} />)}
+        </section>
+    </Layout>
+
+<style>
+    h1{
+        padding: 0 20px 20px 20px;
+        font-size: 3.5rem;
+    }
