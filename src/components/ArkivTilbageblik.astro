@@ -1,0 +1,75 @@
+---
+const {kunstner} = Astro.props;
+import '../styles/global.css';
+---
+
+<article>
+<button class="accordion">202{kunstner.id} </button>
+<div class="panel">
+    <img src={`https://febilgfghfuozaigajsb.supabase.co/storage/v1/object/public/HoestMoenBilleder/${kunstner.billede}`} alt={kunstner.kunstnernavn}>
+    
+</div>
+</article>
+
+
+
+<style>
+    .accordion {
+  background-color: #c7a7c7ff;
+  color: var(--black);
+  cursor: pointer;
+  padding: 18px;
+  padding-left: 35px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.6s;
+  font-size: 3rem;
+}
+
+.accordion.active, .accordion:hover {
+  background-color: var(--primaryDarker);
+}
+
+.accordion.active{ 
+    .panel{
+      display: block; 
+
+}
+}  
+
+.panel {
+  padding: 0 18px;
+  display: block;
+  background-color: var(--primaryDarker);
+  overflow: hidden;
+   max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+img{
+    max-height: 70vh;
+    padding-bottom: 40px;
+}
+</style>
+
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function(this: HTMLElement) {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling as HTMLElement;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = "";
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+</script>
+
+
