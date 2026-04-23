@@ -2,24 +2,33 @@
 const {kunstner} = Astro.props;
 import '../styles/global.css';
 --- 
-<article><img src={`https://febilgfghfuozaigajsb.supabase.co/storage/v1/object/public/HoestMoenBilleder/${kunstner.billede}`} alt={kunstner.kunstnernavn}>
-    <h2>{kunstner.kunstnernavn}</h2>
+<article>
+    <div class="imgContainer"><img src={`https://febilgfghfuozaigajsb.supabase.co/storage/v1/object/public/HoestMoenBilleder/${kunstner.billede}`} alt={kunstner.kunstnernavn}></div>
+    
+    <h3>{kunstner.kunstnernavn}</h3>
 <!-- <p>{kunstner.beskrivelse}</p> -->
 
 </article>
 
 <style>
     article{
-        width: 200px;
+        width: 350px;
+        height: 400px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        place-self: center;
         text-align: center;
         gap: 20px;
         background-color: var(--accent);
         color: var(--buttonTextColor);
     }
+    .imgContainer{
+     width: 350px;
+     height: 350px;
+     overflow: hidden;   
+    }
     img{
-        max-width: 100%;
-        height: auto;
+        object-fit: cover;
+        height: 350px;
+        min-width:100%;
     }
