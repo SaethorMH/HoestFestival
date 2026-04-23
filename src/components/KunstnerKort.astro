@@ -2,12 +2,12 @@
 const {kunstner} = Astro.props;
 import '../styles/global.css';
 --- 
-<article>
+<article><a href=`/kunstnere/${kunstner.id}`>
     <div class="imgContainer"><img src={`https://febilgfghfuozaigajsb.supabase.co/storage/v1/object/public/HoestMoenBilleder/${kunstner.billede}`} alt={kunstner.kunstnernavn}></div>
     
     <h3>{kunstner.kunstnernavn}</h3>
 <!-- <p>{kunstner.beskrivelse}</p> -->
-
+</a>
 </article>
 
 <style>
@@ -21,6 +21,10 @@ import '../styles/global.css';
         gap: 20px;
         background-color: var(--accent);
         color: var(--buttonTextColor);
+        transition: 0.1s;
+    }
+    article:hover{
+        transform: scale(1.05);
     }
     .imgContainer{
      width: 350px;
@@ -31,4 +35,8 @@ import '../styles/global.css';
         object-fit: cover;
         height: 350px;
         min-width:100%;
+    }
+    a{
+        text-decoration: none;
+        color: var(--black);
     }

@@ -4,10 +4,10 @@ const {imgURL, menuSide} = Astro.props;
 <div class="heroContainer">
     <div class="hero">
     <nav>
-        <a href="/program" id="program" style={menuSide === 'program' ? 'transform:scale(1.2); pointer-events:none;' : ''}>Programet</a>
-        <a href="/pladsen" id="pladsen" style={menuSide === 'pladsen' ? 'transform:scale(1.2); pointer-events:none;' : ''}>Pladsen</a>
-        <a href="/arkiv" id="arkiv" style={menuSide === 'arkiv' ? 'transform:scale(1.2); pointer-events:none;' : ''}>Arkiv</a>
-        <a href="/om" id="om" style={menuSide === 'om' ? 'transform:scale(1.2); pointer-events:none;' : ''}>Om os</a>
+        <a href="/program" id="program" style={menuSide === 'program' ? 'transform:scale(1.2); pointer-events:none; text-decoration:underline;' : ''}>Programet</a>
+        <a href="/pladsen" id="pladsen" style={menuSide === 'pladsen' ? 'transform:scale(1.2); pointer-events:none; text-decoration:underline;' : ''}>Pladsen</a>
+        <a href="/arkiv" id="arkiv" style={menuSide === 'arkiv' ? 'transform:scale(1.2); pointer-events:none; text-decoration:underline;' : ''}>Arkiv</a>
+        <a href="/om" id="om" style={menuSide === 'om' ? 'transform:scale(1.2); pointer-events:none; text-decoration:underline; ' : ''}>Om os</a>
     </nav>
     <div id="heroImage">
 <img src={imgURL} alt="HeroBillede">

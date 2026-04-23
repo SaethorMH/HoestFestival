@@ -1,0 +1,51 @@
+---
+//@ts-nocheck
+import KunstnerLayout from "../../layout/KunstnerLayout.astro";
+import '../../styles/global.css';
+
+export async function getStaticPaths() {
+  const url = `${import.meta.env.PUBLIC_SUPABASE_URL}/rest/v1/Kunstnere?select=*`;
+  const apiKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+
+  const data = await fetch(url, {
+    headers: { apikey: apiKey }
+  }).then((res) => res.json());
+
+
+  return data.map((kunstner) => ({
+    params: { kunstnerId: String(kunstner.id) },
+    props: { myKunstner: kunstner },
+  }));
+}
+
+const { myKunstner } = Astro.props;
+---
+
+<KunstnerLayout title={myKunstner.kunstnernavn}>
+<h1>{myKunstner.kunstnernavn}</h1>
+    <div class="imgContainer">
+    <img src={`https://febilgfghfuozaigajsb.supabase.co/storage/v1/object/public/HoestMoenBilleder/${myKunstner.billede}`} alt={myKunstner.kunstnernavn}>
+    </div>
+  <p>{myKunstner.beskrivelse}</p>
+
+</KunstnerLayout>
+  
+
+<style>
+    *{
+        place-self: center;
+    }
+    body{
+        background-color: var(--primaryLighter);
+    }
+    .imgContainer{
+        width: 20vw;
+        height: auto;
+    }
+    img{
+        max-width: 400px;
+    }
+    p{
+        max-width: 65ch;
+    }
+</style>
