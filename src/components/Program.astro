@@ -1,0 +1,159 @@
+---
+const {kunstner} = Astro.props;
+import '../styles/global.css';
+--- 
+
+<details class="dropdown">
+                    <summary class="accordion" id="open">{kunstner.kunstnernavn}</summary>
+<div class="panel">
+<div>
+                    <p>{kunstner.beskrivelse}</p>
+                  <a href="https://open.spotify.com">Lyt til musikken her!</a>
+</div>
+<div>
+  <img src={`https://febilgfghfuozaigajsb.supabase.co/storage/v1/object/public/HoestMoenBilleder/${kunstner.billede}`} alt={kunstner.kunstnernavn}>
+</div>
+</div>
+</details>
+
+
+<style>
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+
+slot {
+margin: 20px;
+}
+.dropdown {
+    padding-left: 35px;
+     padding-right: 35px;
+  padding-bottom: 50px;
+
+}
+
+.accordion {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: 0.4s;
+}
+
+.accordion::after {
+  content: "▶";
+font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+details[open] .accordion::after {
+  transform: rotate(90deg);
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding-top: 20px;
+  overflow: hidden;
+  display: grid;
+grid-template-columns: 1fr;
+}
+
+h2{
+font-size: 2.5rem;
+}
+
+p {
+padding-right: 35px;
+line-height: 30px;
+font-size: 1.2rem;
+font-weight: 100;
+}
+
+a {
+border: 1px solid black;
+justify-self: center;
+padding: 5px;
+background-color: var(--accent);
+color:var(--buttonTextColor);
+  display: inline-block;
+  margin-top: 16px;
+} 
+
+img{
+        max-width: 100%;
+        height: auto;
+    }
+/************ DESKTOP ************/
+@media (min-width: 1000px) {
+slot {
+margin: 20px;
+}
+.dropdown {
+    padding-left: 50px;
+     padding-right: 50px;
+  padding-bottom: 50px;
+
+}
+
+.accordion {
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:active {
+display: grid;
+}
+.panel:active{
+display:grid ;
+}
+
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding-top: 20px;
+  overflow: hidden;
+   text-align: left;
+  display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+h2{
+font-size: 2.5rem;
+}
+
+p {
+padding-right: 15px;
+line-height: 30px;
+font-size: 1.2rem;
+font-weight: 100;
+text-align: left;
+}
+
+a {
+border: 1px solid black;
+justify-self: center;
+padding: 5px;
+background-color: var(--accent);
+color:var(--buttonTextColor);
+  display: inline-block;
+  margin-top: 16px;
+} 
+
+img{
+        max-width: 100%;
+        height: auto;
+    }
+    
+}
