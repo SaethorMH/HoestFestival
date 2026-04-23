@@ -22,22 +22,39 @@ console.log(data);
 
 	
 	<Layout title="Forside" imgURL="https://ucef0a8bb4432123cd3b87023056.previews.dropboxusercontent.com/p/thumb/AC_CcfzhItGeTqjk8oSGt7ndOZ6otfJfy9UCe34l5BmqyASHQm0g8IWN2c0tHp6uObH2C6sn17zqp0iALkd6rbSGugOWKOWPOfIrd0QuKo9yinnNxsORe1XUUsbsBNHBMf--_OyCZzuC5n9qM3Og62gEBcIEqqvaAG8mKzq75HBMcnVk2jlEO9BIv2o_gg3eqPEO4sf3x05JCmZqrwnqa8DOFUTZX850KwcUVdymqAul2osNr6uKBOYLQk-m0My0_RZ21kJji4AyBO3fk_V7DEpQRsAQXsICGGO7LuUaTzQC4DuHgWCqjMgVKUGpJ60yBirE6tHJ4cp3wMdRepoQ9c7hpnSAuKH0xKzWNN7Cg_hvc7w6IIZ6EpT6fS_im1jNlQg/p.jpeg?is_prewarmed=true">
-<h1>Dette er forsiden</h1>
+<h2>Årets lineup:</h2>
 <section id="carousel">
 {data.map((kunstner) => <KunstnerKort kunstner={kunstner} />)}
+
 </section>
 
-
+<div class="banner">
+  <h3>Høst Festival</h3>
+  <h3>*</h3>
+  <h3>Høst Festival</h3>
+  <h3>*</h3>
+  <h3>Høst Festival</h3>
+  <h3>*</h3>
+  <h3>Høst Festival</h3>
+</div>
 	</Layout>
 <style>
     #carousel{
       display: flex;
-      flex-direction: row;
+    
       gap: 100px;
         width: 80%;
-        height: 300px;
-        background-color: red;
+        height: 500px;
         margin: auto;
         overflow-x: scroll;
+        scrollbar-width: none;
+    }
+    .banner{
+      display: flex;
+      justify-content: space-evenly;
+      background-color: var(--accent);
+      *{
+        color:var(--buttonTextColor);
+      }
     }
 </style>  

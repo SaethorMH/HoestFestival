@@ -14,7 +14,7 @@ image {
   --accent: #fff6c5ff;
   --buttonTextColor: #000000ff;
 }
-.alt {
+html.alt {
   --primary: #e36573ff;
   --primaryLighter: #da9896ff;
   --primaryDarker: #a9363aff;
@@ -41,4 +41,20 @@ image {
 
 * {
   font-family: londrina, sans-serif;
+}
+h1{
+  font-size: 128px;
+}
+h2{
+  font-size: 64px;
+}
+h3{
+  font-size: 48px;
+}
+p{
+  font-size:32px ;
+}
+
+h2, h3, p{
+  place-self: center;
 }

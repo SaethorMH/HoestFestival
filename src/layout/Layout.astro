@@ -6,13 +6,14 @@ import HeroSection from '../components/HeroSection.astro';
 
 
 const { title = 'Welcome' } = Astro.props;
-const {imgURL} = Astro.props;
+const {imgURL, menuSide} = Astro.props;
 ---
 
 
-<html lang="en">
+<html lang="da">
     <head>
 		<meta charset="utf-8" />
+        <meta name="robots" content="noindex, nofollow" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
@@ -21,7 +22,7 @@ const {imgURL} = Astro.props;
 	</head>
     <body>
         <Header />
-        <HeroSection imgURL={imgURL} />
+        <HeroSection imgURL={imgURL} menuSide={menuSide}/>
         <main >
             <slot />
         </main>

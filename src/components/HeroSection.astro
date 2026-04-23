@@ -1,9 +1,14 @@
 ---
-const {imgURL} = Astro.props;
+const {imgURL, menuSide} = Astro.props;
 ---
 <div class="heroContainer">
     <div class="hero">
-    <h1>Velkommen til Høst Festivalen</h1>
+    <nav>
+        <a href="/program" id="program" style={menuSide === 'program' ? 'transform:scale(1.2); pointer-events:none;' : ''}>Programet</a>
+        <a href="/pladsen" id="pladsen" style={menuSide === 'pladsen' ? 'transform:scale(1.2); pointer-events:none;' : ''}>Pladsen</a>
+        <a href="/arkiv" id="arkiv" style={menuSide === 'arkiv' ? 'transform:scale(1.2); pointer-events:none;' : ''}>Arkiv</a>
+        <a href="/om" id="om" style={menuSide === 'om' ? 'transform:scale(1.2); pointer-events:none;' : ''}>Om os</a>
+    </nav>
     <div id="heroImage">
 <img src={imgURL} alt="HeroBillede">
 </div>
@@ -11,6 +16,8 @@ const {imgURL} = Astro.props;
 
 <img src="/images/bakke1.svg" alt="Bakke 1" class="bakke">
 <img src="/images/bakke3.svg" alt="Bakke 3" class="bakke">
+<img src="/images/sol.svg" alt="solen" id="sol">
+
 </div>
 </div>
 
@@ -20,7 +27,24 @@ const {imgURL} = Astro.props;
     height: 100vh;
     overflow-y: hidden;
 }
-
+nav{
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    grid-row:1/2 ;
+    place-self: start;
+}
+a{
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 48px;
+transition: 0.1s;
+}
+a:hover{
+    transform: scale(1.1);
+}
     .hero{
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -32,7 +56,15 @@ const {imgURL} = Astro.props;
         grid-column: 1/-1;
         grid-row: 1/2;
         max-width: 100%;
+        pointer-events: none;
     } 
+    #sol{
+        grid-column: 3/4;
+        grid-row: 1/2;
+        place-self: center ;
+        margin-top:-10rem;
+        width: 250px;
+    }
     #heroImage{
         background-color: black;
         
@@ -44,4 +76,7 @@ const {imgURL} = Astro.props;
     @media  {
         
     }
+    
+    
+   
 </style>
